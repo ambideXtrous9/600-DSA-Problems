@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define V 5
+
+void printVertexCover(vector<int> adj[])
+{
+    // Initialize all vertices as not visited.
+    bool visited[V];
+    for (int i = 0; i < V; i++)
+        visited[i] = false;
+
+    vector<int>::iterator i;
+
+    // Consider all edges one by one
+    for (int u = 0; u < V; u++)
+    {
+        // An edge is only picked when both visited[u] and visited[v]
+        // are false
+        if (visited[u] == false)
+        {
+            // Go through all adjacents of u and pick the first not
+            // yet visited vertex (We are basically picking an edge
+            // (u, v) from remaining edges.
+            for (i = adj[u].begin(); i != adj[u].end(); ++i)
+            {
+                int v = *i;
+                if (visited[v] == false)
+                {
+                    // Add the vertices (u, v) to the result set.
+                    // We make the vertex u and v visited so that
+                    // all edges from/to them would be ignored
+                    visited[v] = true;
+                    visited[u] = true;
+                    break;
+                }
+            }
+        }
+    }
+
+    // Print the vertex cover
+    for (int i = 0; i < V; i++)
+        if (visited[i])
+            cout << i << " ";
+}
