@@ -283,7 +283,7 @@ int Partition(vector<int> arr,int low,int high)
             left++;
         }
 
-        while (arr[right] < pivot && right >= low-1)
+        while (arr[right] > pivot && right >= low+1)
         {
             right--;
         }
