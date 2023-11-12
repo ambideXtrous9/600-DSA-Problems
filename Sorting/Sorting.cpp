@@ -295,6 +295,7 @@ int Partition(vector<int> arr,int low,int high)
     }
 
     // put the pivot at right pos. left[] < pivot and right[] > pivot
+    // right just crossed left and indicate actual pos of pivot
     swap(arr[low],arr[right]); 
     return right;
 }
