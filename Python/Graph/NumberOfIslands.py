@@ -20,8 +20,11 @@ class Solution:
 
             for i in range(-1,2,1):
                 for j in range(-1,2,1):
+                    
                     if(self.isValid(u+i,v+j,n,m) and i!=j and abs(i-j) <= 1):
+                    
                         if(grid[u+i][v+j] == '1' and not visited[u+i][v+j]):
+                    
                             visited[u+i][v+j] = True
                             Q.append((u+i,v+j))
 

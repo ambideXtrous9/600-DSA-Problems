@@ -14,7 +14,6 @@ def DFS(adj,u,visited,res):
 
 def bfsTraversal(n: int, adj: List[List[int]]):
 
-
     res = []
     visited = [False] * n
 

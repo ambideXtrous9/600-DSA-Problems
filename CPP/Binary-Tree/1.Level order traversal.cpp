@@ -13,14 +13,18 @@ struct Node
 vector<int> levelOrder(Node *node)
 {
     vector<int> V;
+    
     queue<Node *> Q;
+    
     if (node == NULL)
         return V;
+    
     Q.push(node);
 
     while (!Q.empty())
     {
         int n = Q.size();
+        
         for (int i = 0; i < n; i++)
         {
             Node *top = Q.front();
