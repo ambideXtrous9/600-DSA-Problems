@@ -9,6 +9,13 @@ struct Node
 };
 
 /*
+1. store left child node to Q, to start every diagonal traversal
+
+2. and from node keep on traversing to right to get the diagonal
+
+*/
+
+/*
 1. Push the root node onto a queue.
 2. Take the next node from the front of the queue.
 3. Add this node's data to the end of the answer vector.
@@ -30,7 +37,9 @@ vector<int> diagonal(Node *root)
 
     while (!Q.empty())
     {
-        auto cur = Q.front(); Q.pop();
+        auto cur = Q.front(); 
+        
+        Q.pop();
 
         while(cur)
         {

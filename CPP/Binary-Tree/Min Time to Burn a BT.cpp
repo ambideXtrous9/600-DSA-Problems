@@ -37,14 +37,14 @@ int LetsBurn(Node *root, unordered_map<Node *, Node *> &M)
             auto node = Q.front();
             Q.pop();
 
-            if (node->left && !vis[node->left])
+            if (node->left && !vis[node->left]) // left child
             {
                 flag = 1;
                 vis[node->left] = 1;
 
                 Q.push(node->left);
             }
-            if (node->right && !vis[node->right])
+            if (node->right && !vis[node->right]) // right child
             {
                 flag = 1;
                 vis[node->right] = 1;
@@ -52,7 +52,7 @@ int LetsBurn(Node *root, unordered_map<Node *, Node *> &M)
                 Q.push(node->right);
             }
 
-            if (M[node] && !vis[M[node]])
+            if (M[node] && !vis[M[node]]) // its parent
             {
                 flag = 1;
                 vis[M[node]] = 1;

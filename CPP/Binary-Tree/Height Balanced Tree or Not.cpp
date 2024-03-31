@@ -18,9 +18,12 @@ int height(TreeNode *root)
         return 0;
 
     int lh = height(root->left);
+    
     if (lh == -1)
         return -1;
+    
     int rh = height(root->right);
+    
     if (rh == -1)
         return -1;
 

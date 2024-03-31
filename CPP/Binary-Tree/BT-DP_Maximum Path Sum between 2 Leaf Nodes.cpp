@@ -38,7 +38,7 @@ int sum(Node *root, int &res)
 
     // when either of the child is missing
     // return not_ans_path won't work as null returns 0 a
-    // and on the other child it may be -ve val, i that case it
+    // and on the other child it may be -ve val, in that case it
     // max(-ve,0) = 0 -> which does not exist ignoring the child
     // having -ve val. so we need to write explicitly
 
