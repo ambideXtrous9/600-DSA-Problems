@@ -2,6 +2,22 @@
 
 using namespace std;
 
+
+/*
+
+1. Multi Source BFS.
+
+2. At every level of Queue : increment the Timer (start the timer before)
+
+3. at the end we have to recheck whether any good ornage is left.
+
+4. If exist then  return -1
+
+5. Other wise return (Timer-1)
+
+
+*/
+
 int orangesRotting(vector<vector<int>> &M)
 {
     int n = M.size();
@@ -40,6 +56,7 @@ int orangesRotting(vector<vector<int>> &M)
         {
             int u = Q.front().first;
             int v = Q.front().second;
+
             Q.pop();
 
             for (int i = 0; i < 4; i++)

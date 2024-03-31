@@ -23,8 +23,11 @@ int d(Node *root, int &res)
     int l = d(root->left, res);
     int r = d(root->right, res);
 
-    res = max(res, 1 + l + r);
+    int cur_diameter = (1 + l + r);
 
+    res = max(res, cur_diameter);
+
+    // return height to parent to calculate diam at parent 
     return 1 + max(l, r);
 }
 

@@ -2,6 +2,23 @@
 
 using namespace std;
 
+
+/*
+
+1. Put <Node,Parent of Node> in Queue. at start : Q.append((s,-1))
+
+2. Now explore all the Neighbourhood of u -> v = adj[u]
+
+    a. if v is not visited, make it visited[v] = T and put in Q with parent Q.push({v,u})
+
+    b. if v already visited, check whether it is parent of u : if not -> cycle exist
+
+        if(parent!=v) return True
+
+3. else Cycle does not exist.
+
+*/
+
 bool BFSCycle(vector<int> adj[],int s,vector<bool>& visited)
 {
     queue<pair<int,int>> q;
