@@ -1,3 +1,7 @@
+
+
+// kadane's Algorithm
+
 class Solution {
 public:
     int maxProfit(vector<int>& prices) 
@@ -19,6 +23,9 @@ public:
     }
 };
 
+
+// DP Solution
+
 class Solution {
 public:
     
@@ -27,7 +34,7 @@ public:
     
     int stock(vector<int>& prices,int i,int n,bool buy,int k)
     {
-        if(i==n) return 0;
+        if(i==n || k<=0) return 0;
         
         if(dp[i][k][buy]!=-1) return dp[i][k][buy];
         
