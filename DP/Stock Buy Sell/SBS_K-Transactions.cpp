@@ -17,6 +17,8 @@ int stock(vector<int> &arr, int i, int buy, int k, int n, vector<vector<vector<i
     if (dp[i][buy][k] != -1)
         return dp[i][buy][k];
 
+    
+
     int ans = stock(arr, i + 1, buy, k, n, dp);
 
     if (buy && k)
